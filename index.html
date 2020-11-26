@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src = "./app.js"></script>
+    <title>Debounce Tuts</title>
+</head>
+<body>
+    <h2>Debounce Tuts</h2>
+    <div>
+        <button id = "btn">Click me</button>
+    </div>
+
+    <script>
+        var count = 0;
+        var btn = document.getElementById("btn");
+        btn.addEventListener('click', (
+            debounce(function() {
+                console.log("clicked")
+                console.info('Hey! It is', new Date().toUTCString());
+                }, 3000)
+            )
+        );
+    </script>
+    
+</body>
+</html>
