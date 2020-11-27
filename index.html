@@ -20,7 +20,9 @@
             </h4>
             <h4>Debounce count: <p id="debounceResult"></p>
             </h4>
-            <div id="card">
+            <h4>Throttle count: <p id="throttleResult"></p>
+            </h4>
+            <div type = "button" id="card">
 
             </div>
 
@@ -31,17 +33,29 @@
 <script>
     var rawMoves = 0,
         debounceMoves = 0;
+    throttleMoves = 0;
     var divById = document.getElementById("card");
-    divById.addEventListener('mousemove', function () {
+
+    //for raw count
+    divById.addEventListener('click', function () {
         var resultRaw = document.getElementById("rawResult");
         rawMoves++;
         resultRaw.innerHTML = rawMoves.toString();
     });
-    divById.addEventListener('mousemove', dupDebounce(function () {
+
+    //for debounce count
+    divById.addEventListener('click', dupDebounce(function () {
         var resultDebounce = document.getElementById("debounceResult");
         debounceMoves++;
         resultDebounce.innerHTML = debounceMoves.toString();
-    }, 50));
+    }, 500));
+
+    // for throttle count
+    divById.addEventListener('click', dupThrottle(function () {
+        var resultThrottle = document.getElementById("throttleResult");
+        throttleMoves++;
+        resultThrottle.innerHTML = throttleMoves.toString();
+    }), 500);
 </script>
 
 </html>
