@@ -1,0 +1,20 @@
+{
+  "name": "debounce",
+  "version": "1.0.0",
+  "description": "Code for Simple debounce and throttle method",
+  "main": "app.js",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^7.14.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Javascript",
+    "Debounce",
+    "Throttle"
+  ],
+  "author": "Suhas Pindiproli",
+  "license": "MIT"
+}
