@@ -1,4 +1,4 @@
-function dupDebounce(callback, delay) {
+function debounce(callback, delay) {
   let bounce
   return function () {
     const context = this;
@@ -7,14 +7,14 @@ function dupDebounce(callback, delay) {
     bounce = setTimeout(() => callback.apply(context, args), delay);
   }
 }
-function dupThrottle(callback, delay) {
+function throttle(callback, delay) {
   //the function needs to be executed after a certain delay
   let isWait = false;
-  return function (...args) {
+  return function () {
     if (!isWait) {
       callback();
       isWait = true;
-      setTimeout(() => isWait = false, delay)
+      setTimeout(() => isWait = false, delay);
     }
   }
 

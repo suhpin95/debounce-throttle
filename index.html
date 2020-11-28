@@ -37,25 +37,25 @@
     var divById = document.getElementById("card");
 
     //for raw count
-    divById.addEventListener('click', function () {
+    divById.addEventListener('mousemove', function () {
         var resultRaw = document.getElementById("rawResult");
         rawMoves++;
         resultRaw.innerHTML = rawMoves.toString();
     });
 
     //for debounce count
-    divById.addEventListener('click', dupDebounce(function () {
+    divById.addEventListener('mousemove', debounce(function () {
         var resultDebounce = document.getElementById("debounceResult");
         debounceMoves++;
         resultDebounce.innerHTML = debounceMoves.toString();
     }, 500));
 
     // for throttle count
-    divById.addEventListener('click', dupThrottle(function () {
+    divById.addEventListener('mousemove', throttle(function () {
         var resultThrottle = document.getElementById("throttleResult");
         throttleMoves++;
         resultThrottle.innerHTML = throttleMoves.toString();
-    }), 500);
+    }, 500));
 </script>
 
 </html>
